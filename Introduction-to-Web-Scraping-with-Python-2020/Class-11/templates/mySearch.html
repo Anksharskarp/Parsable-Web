@@ -1,0 +1,38 @@
+<html>
+<h1> Quotes Page </h1>
+<form method = 'POST'>
+Search By Author: <input name='author'>
+<input type='submit'>
+
+<table>
+<tr>
+<th> # </th>
+<th> Quote </th>
+<th> Author </th>
+<th> Tags </th>
+</tr>
+
+{% for values in quoteList %}
+{% if author == values[2] %}
+<tr>
+<td> {{ values[0] }} </td>
+<td> {{ values[1] }} </td>
+<td> {{ values[2] }} </td>
+<td> {{ values[3] }} </td>
+</tr>
+{% endif %}
+{% endfor %}
+
+</table>
+<style>
+table, th, td{
+border: 1px solid black;
+}
+
+html{
+	background-color: lightblue
+}
+
+</style>
+
+</html>
